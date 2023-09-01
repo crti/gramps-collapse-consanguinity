@@ -17,14 +17,14 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 """
-Module consanguinity.py
+Module collapse-consanguinity.py
 
 Gramplet for reporting on pedigree collapse and spousal consanguinity for
 the active person.
 
 Exports:
 
-class ConsanguinityGramplet
+class CollapseConsanguinityGramplet
 
 """
 
