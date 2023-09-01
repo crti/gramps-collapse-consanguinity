@@ -1,4 +1,5 @@
-# consanguinuity
+# gramps-collapse-consanguinity
+
 GRAMPS Gramplet to show pedigree collapse and spousal consanguinuity for active person.
 
 Link to Wiki for original Gramplet
