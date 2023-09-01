@@ -1,0 +1,38 @@
+msgid "No Family Tree loaded."
+msgstr "Kein Familienbaum geladen."
+
+msgid "Move mouse over links for options"
+msgstr "Bewegen Sie die Maus über Links für Optionen"
+
+msgid "Click to make active\nRight-click to edit"
+msgstr "Klicken Sie, um aktiv zu machen\nRechtsklicken zum Bearbeiten"
+
+msgid "View style"
+msgstr "Ansichtsstil"
+
+msgid "Single pane"
+msgstr "Einzelner Bereich"
+
+msgid "Notebook"
+msgstr "Notizbuch"
+
+msgid "Copy"
+msgstr "Kopieren"
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Display pedigrees"
+msgstr "Stammbäume anzeigen"
+
+msgid "Pedigree collapse"
+msgstr "Ahnenverlust"
+
+msgid "Spousal consanguinity" 
+msgstr "Ehegattenkonsanguinität"
+
+msgid "Descendants"
+msgstr "Nachkommen"
+
+msgid "Pedigrees"
+msgstr "Stammbäume"
