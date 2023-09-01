@@ -1,4 +1,4 @@
-#  File: Consanguinity.gpr.py
+#  File: collapse-consanguinity.gpr.py
 register(GRAMPLET,
          id="Collapse-Consanguinity",
          name=_("Collapse-Consanguinity"),
