@@ -1,6 +1,6 @@
-# CosFormatter - Services for formatting data for consanguinity gramplet
+# CosFormatter - Services for formatting data for collapse consanguinity gramplet
 #
-# Copyright (C) 2021  Hans Boldt
+# Copyright (C) 2021  Hans Boldt, 2023 ChrisR
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -57,6 +57,7 @@ from pedigree import Pedigree
 # Translation      #
 #------------------#
 try:
+    from gramps.gen.const import GRAMPS_LOCALE as glocale # ChrisR/Claude de.po try
     _trans = glocale.get_addon_translator(__file__)
     _ = _trans.gettext
 except ValueError:
