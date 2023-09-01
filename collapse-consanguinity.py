@@ -54,7 +54,7 @@ from gi.repository import Gtk, GLib, Gdk
 # Other related gramplet modules    #
 #-----------------------------------#
 from pedigree import Pedigree, SimpleCache
-from consformatter import ConsFormatter, SimpleStringBuffer
+from collconsformatter import collconsformatter, SimpleStringBuffer
 
 #------------------#
 # Translation      #
@@ -530,7 +530,7 @@ class ConsanguinityGramplet(Gramplet):
         yield True
 
         # Format data for output
-        data_formatter = ConsFormatter(self.dbstate.db,
+        data_formatter = collconsformatter(self.dbstate.db,
                                        active_handle,
                                        active_pedigree,
                                        spouse_pedigrees)
@@ -593,7 +593,7 @@ class DescendantsWindow(Gtk.Window):
         anc_names = list()
         for anc in ancestors:
             pers = anc.get_person_handle()
-            anc_names.append(ConsFormatter.format_person(self.db, pers,
+            anc_names.append(collconsformatter.format_person(self.db, pers,
                                                          split=True))
 
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -687,13 +687,13 @@ class DescendantsWindow(Gtk.Window):
             aspouse = (afirst*2+1) if prim_is_male else (afirst*2)
             anc = self.pedigree.get_ancestor_by_number(aspouse)
             pers = anc.get_person_handle()
-            aspouse_name = ConsFormatter.format_person \
+            aspouse_name = collconsformatter.format_person \
                                (self.db, pers, split=True)
 
             bspouse = (bfirst*2+1) if prim_is_male else (bfirst*2)
             anc = self.pedigree.get_ancestor_by_number(bspouse)
             pers = anc.get_person_handle()
-            bspouse_name = ConsFormatter.format_person \
+            bspouse_name = collconsformatter.format_person \
                                (self.db, pers, split=True)
 
             lab = PersonLabel(aspouse_name, (aspouse%2 == 0),
@@ -718,7 +718,7 @@ class DescendantsWindow(Gtk.Window):
                 apers = aanc.get_person_handle()
                 if not apers:
                     break
-                aname = ConsFormatter.format_person(self.db, apers, split=True)
+                aname = collconsformatter.format_person(self.db, apers, split=True)
                 if apers == self.active_handle:
                     aname = '<span weight="bold">%s</span>' % aname
                 alabel = PersonLabel(aname, aanc.is_male(),
@@ -728,7 +728,7 @@ class DescendantsWindow(Gtk.Window):
             if anc_num_b and anc_num_b != anc_num_a:
                 banc = self.pedigree.get_ancestor_by_number(anc_num_b)
                 bpers = banc.get_person_handle()
-                bname = ConsFormatter.format_person(self.db, bpers, split=True)
+                bname = collconsformatter.format_person(self.db, bpers, split=True)
                 if bpers == self.active_handle:
                     bname = '<span weight="bold">%s</span>' % bname
                 blabel = PersonLabel(bname, banc.is_male(),
@@ -936,7 +936,7 @@ class PedigreesWindow(Gtk.Window):
         """
         Create page and content for notebook
         """
-        person_name = ConsFormatter.format_person(self.db, person_handle,
+        person_name = collconsformatter.format_person(self.db, person_handle,
                                                  link=False, dates=False)
         person_name = person_name.replace(', ', ",\n")
 
@@ -965,7 +965,7 @@ class PedigreesWindow(Gtk.Window):
             if primary:
                 ancestor = pedigree.get_ancestor_by_number(anc_num)
                 anc_handle = ancestor.get_person_handle()
-                anc_name = ConsFormatter.format_person(self.db, anc_handle)
+                anc_name = collconsformatter.format_person(self.db, anc_handle)
                 outstr += "%d: %s\n" % (anc_num, anc_name)
 
             else:
